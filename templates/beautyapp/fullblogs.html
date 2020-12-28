@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content%}
+    {% load static %}
+   
+    <div class="block">
+        <p style="text-align: center; font-size: x-large;"><b>{{blog.title}}</b></p>
+        <p style="text-align: center; font-size: large;">
+            {{blog.author}}<br> {{blog.body}}</p>
+    </div>
+
+    
+    
+    <form action=" " method="POST">
+        {% csrf_token %}
+        {{ comments }}
+        {{ comment_form }}
+      </form>
+
+  
+
+{% endblock content%}

@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br/>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <form method="get">
+                {{myFilter.form}}
+                <button class="btn btn-info" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br/>
+
+<div class="row">
+  <div class="col">
+      <div class="card card-body">
+      <table class="table">
+          <thead class="thead-dark">
+              <tr>
+              <th col="" >Hair care</th>
+              <th col=""> Price</th>
+              <th col="">Hours</th>
+              <th col=""></th>
+              
+              </tr>
+          </thead>
+          {% for haircare in haircares %}
+          <tr>
+              
+              <th>{{ haircare.hairCare }}</th>
+              <th>{{ haircare.price }}</th>
+              <th>{{ haircare.hours }}</th>
+             
+          </tr>
+          {% endfor %}
+      
+          </table>
+      </div>
+  </div>
+</div>
+  
+<br><br>
+<div class="col-md">
+  <div class="card card-body">
+<h4 style="text-align: center;"> {{ note }} </h4>
+</div>
+<br><br>
+<div class="col-md-8">
+    
+<div class="card card-body" style="margin-left: 50%; padding-left: 15%;">
+    <br><br<br><br<br><br<br><br<br><br<br><br>   
+  <form action="{% url 'haircare' %}" method="POST">
+    {% csrf_token %}
+    {{ bookinghaircareform.as_p }}
+    <input class="btn  btn-sm btn-info" type="submit" value="Book Appointment">
+  </form>
+  <br><br<br><br<br><br<br><br<br><br<br><br>
+  
+  </div>
+  </div>
+  <br><br<br><br<br><br<br><br<br><br<br><br>
+  
+  
+  </div>
+ 
+{% endblock %}

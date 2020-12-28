@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+  <div class="col">
+    
+<br/>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <form method="get">
+                {{myFilter.form}}
+                <button class="btn btn-info" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br/>
+      <div class="col">
+      <div class="card card-body">
+        <table class="table">
+            <thead class="thead-dark">
+              <tr>
+                <th col="">services</th>
+                <th></th>
+                
+              </tr>
+            </thead>
+              
+              <tr>
+                <th>Hair Care</th>
+                <th><a class="btn btn-sm btn-info" href="{% url 'haircare' %}">View full service</a></th>
+              </tr>
+              <tr>
+                <th>Make Up Services</th>
+                <th><a class="btn btn-sm btn-info" href="{% url 'makeupservice' %}">View full service</a></th>
+              </tr>
+              <tr>
+                <th>Hair Styles</th>
+                <th><a class="btn btn-sm btn-info" href="{% url 'hairstyle' %}">View full service</a></th>
+              </tr>
+              <tr>
+                <th>Nail Arts</th>
+                <th><a class="btn btn-sm btn-info" href="{% url 'nailart' %}">View full service</a></th>
+              </tr>
+              <tr>
+                <th>Facial Treatment</th>
+                <th><a class="btn btn-sm btn-info" href="{% url 'facialtreatment' %}">View full service</a></th>
+              </tr>
+              <tr>
+                <th>Pedicure</th>
+                <th><a class="btn btn-sm btn-info" href="{% url 'pedicure' %}">View full service</a></th>
+              </tr>
+              <tr>
+                <th>Manicure</th>
+                <th><a class="btn btn-sm btn-info" href="{% url 'manicure' %}">View full service</a></th>
+              </tr>
+             
+          </table>
+        </div>
+        </div>
+      
+        <br><br>
+    </div>
+    </div>
+
+{% endblock content%}

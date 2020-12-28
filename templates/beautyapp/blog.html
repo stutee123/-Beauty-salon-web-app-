@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<br/>
+<div class="row">
+    <div class="col">
+        <div class="card card-body">
+            <form method="get">
+                {{myFilter.form}}
+                <button class="btn btn-info" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</div>
+<br/>
+
+<div class="row">
+    <div class="col">
+        <div class="card">
+            {% for blog in blogs %}
+            <br>
+            <h4 style="padding-left: 50px;"><a href="{% url 'fullblogs' blog.id %}">{{blog.title}}</a></h4><br>
+            <div style="padding-left: 50px;">
+            {{blog.created_at}}
+            <p style='line-height: 1.2em;height: 1.2em;overflow: hidden;text-align: justify;'>
+                {{blog.body}}
+                </p>
+                
+                </div>
+                <hr>
+            
+
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock content%}
